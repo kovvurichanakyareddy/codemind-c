@@ -1,0 +1,37 @@
+#include<stdio.h>
+int main()
+{
+    int i,j,a,b,mat[1000][1000],s,t1=-100,t2=-100;
+    scanf("%d%d",&a,&b);
+    for(i=0;i<a;i++)
+    {
+        s=0;
+        for(j=0;j<b;j++)
+        {
+            scanf("%d",&mat[i][j]);
+            s+=mat[i][j];
+        }
+        if(s>t1)
+        {
+            t1=s;
+        }
+    }
+    for(i=0;i<b;i++)
+    {
+        s=0;
+        for(j=0;j<a;j++)
+        {
+            s+=mat[j][i];
+        }
+        if(s>t2)
+        {
+            t2=s;
+        }
+    }
+    if(t1>t2)
+    {
+        printf("%d",t1);
+    }else{
+        printf("%d",t2);
+    }
+}
